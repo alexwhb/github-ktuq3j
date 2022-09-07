@@ -11,11 +11,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="mb-4 bg-white p-4 h-16">
+      <header className="mb-4 bg-white pl-4 pt-2 h-16">
         <svg
+          className="inline-block"
           xmlns="http://www.w3.org/2000/svg"
-          width="68.568"
-          height="62.189"
+          width="45.568"
+          height="38.189"
           viewBox="0 0 68.568 62.189"
         >
           <g
@@ -58,7 +59,8 @@ const Home: NextPage = () => {
             </g>
           </g>
         </svg>
-        This is the header
+
+        <span className="font-['krok'] text-2xl ml-2">Pin B</span>
       </header>
 
       {/* This will be our card  */}
