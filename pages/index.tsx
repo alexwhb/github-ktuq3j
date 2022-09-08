@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Calendar, Clock, MapPin, MessageCircle, Share2 } from 'react-feather';
+import EventCard from '../components/EventCard';
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +12,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="mb-4 bg-white pl-4 pt-2 h-16">
+      <header className="flex mb-4 bg-white pl-4 pt-2 h-16">
         <svg
           className="inline-block"
           xmlns="http://www.w3.org/2000/svg"
@@ -60,65 +61,33 @@ const Home: NextPage = () => {
           </g>
         </svg>
 
-        <span className="font-['krok'] text-2xl ml-2">Pin B</span>
+        <div className="font-['krok'] text-2xl ml-3 mt-1">Pin B</div>
       </header>
 
       {/* This will be our card  */}
 
-      <div className="grid sm:grid-cols-2 gap-6 sm:grid-cols-1 m-2">
-        <div className=" bg-white shadow rounded">
-          <div className="flex justify-between">
-            <div className="p-4">
-              <h1 className="text-xl font-bold text-gray-800">
-                This is my event
-              </h1>
-              <h2 className="text-md text-gray-500">subtitle</h2>
-            </div>
-            <img
-              className="rounded-full w-12 h-12 m-4"
-              src="http://placekitten.com/50/50"
-            />
-          </div>
-          <img src="http://placekitten.com/600/350" />
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 m-2">
+        <EventCard
+          title={'Event Title'}
+          subtitle={'subtitle'}
+          eventImageUrl={'http://placekitten.com/700/350'}
+          profileImageUrl={'http://placekitten.com/50/50'}
+          eventAddressLine1={'1948 Pioneer Road'}
+          eventAddressLine2={'Medford OR. 97501'}
+          eventTime={'5:30 PM'}
+          eventDate={'Oct 18th 2022'}
+        />
 
-          <div className="flex justify-between p-2 text-sky-700 font-semibold">
-            <div className="flex">
-              <MapPin className="mt-3 mr-2" />
-              <div>
-                1948 Pioneer Road,
-                <br />
-                Medford OR. 97501
-              </div>
-            </div>
-            <div>
-              <div className="flex">
-                <Clock className="mr-2" /> 5:30 PM
-              </div>
-              <div className="flex mt-2">
-                <Calendar className="mr-2" /> Oct 18th 2022
-              </div>
-            </div>
-            <div className="flex mt-4 mr-2">
-              <Share2 className="mr-4" /> <MessageCircle />
-            </div>
-          </div>
-        </div>
-
-        <div className=" bg-white shadow rounded">
-          <div className="flex justify-between">
-            <div className="p-4">
-              <h1 className="text-xl font-bold text-gray-800">
-                This is my event
-              </h1>
-              <h2 className="text-md text-gray-500">subtitle</h2>
-            </div>
-            <img
-              className="rounded-full w-12 h-12 m-4"
-              src="http://placekitten.com/50/50"
-            />
-          </div>
-          <img src="http://placekitten.com/g/600/350" />
-        </div>
+        <EventCard
+          title={'Event Title'}
+          subtitle={'subtitle'}
+          eventImageUrl={'http://placekitten.com/g/700/350'}
+          profileImageUrl={'http://placekitten.com/g/50/50'}
+          eventAddressLine1={'1948 Pioneer Road'}
+          eventAddressLine2={'Medford OR. 97501'}
+          eventTime={'5:30 PM'}
+          eventDate={'Oct 18th 2022'}
+        />
       </div>
     </div>
   );
